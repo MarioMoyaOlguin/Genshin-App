@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    body {
+        /* background-image: linear-gradient(to bottom right, #212534, #181c27); */
+    }
+    .serif-pro {
+        font-family: 'Source Serif Pro', serif;
+    }
+    .spartan {
+        font-family: 'League Spartan', sans-serif;
+    }
+
+    :root {
+        --bg-4s: linear-gradient(to bottom, #68629AFF 0%, #AE91C5FF 100%);
+        --bg-5s: linear-gradient(to bottom, #aa7840 0%, #cea064 100%);
+        --bg-animate-4s: linear-gradient(110deg, #68629AFF, #AE91C5FF, #68629AFF, #AE91C5FF, #68629AFF);
+        --bg-animate-5s: linear-gradient(110deg, #aa7840, #cea064, #aa7840, #cea064, #aa7840);
+        --border-4s: linear-gradient(110deg, #5ddcff, #3c67e3, #4e00c2, #5ddcff, #3c67e3, #5ddcff);
+        --border-5s: linear-gradient(110deg, #ffe8b7, #bf8552, #c9ad50, #ffe8b7, #bf8552, #c9ad50);
+        --bg-animated: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+    }
+    
+    .bg-animated {
+        background: var(--bg-animated);
+    }
+    .bg-4stars {
+        background: var(--bg-4s);
+    }
+    .bg-5stars {
+        background: var(--bg-5s);
+    }
+    .border-4s {
+        background: var(--border-4s);
+    }
+    .border-5s {
+        background: var(--border-5s);
+    }
+    .bg-animated-4s {
+        background: var(--bg-animate-4s);
+    }
+    .bg-animated-5s {
+        background: var(--bg-animate-5s);
+    }
+    .bg-blur {
+        filter: blur(8px);
+    }
+    .bg-outline-b {
+        background: linear-gradient(to top, #eb7134 0px, #eb7134 4px, rgba(255, 255, 255, 0.1) 4px, rgba(255, 255, 255, 0.1) 100%);
+    }
+    .animate-bg {
+        background-size: 200% auto;
+    }
+}

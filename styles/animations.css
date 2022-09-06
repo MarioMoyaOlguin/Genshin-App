@@ -1,0 +1,30 @@
+:root {
+    --bg-4s: linear-gradient(to bottom, #68629AFF 0%, #AE91C5FF 100%);
+    --bg-5s: linear-gradient(to bottom, #aa7840 0%, #cea064 100%);
+    --bg-conic-4s: conic-gradient(#ffe8b7, #bf8552, #9b6e44, #ffe8b7);
+    --bg-conic-5s: conic-gradient(#5ddcff, #3c67e3, #4e00c2, #5ddcff);
+    --bg-animated-4s: linear-gradient(110deg, #5ddcff, #3c67e3, #4e00c2, #5ddcff, #3c67e3, #5ddcff);
+    --bg-animated-5s: linear-gradient(110deg, #ffe8b7, #bf8552, #c9ad50, #ffe8b7, #bf8552, #c9ad50);
+}
+
+.bg-4stars {
+    background: var(--bg-4s);
+}
+.bg-5stars {
+    background: var(--bg-5s);
+}
+.bg-animated-sr {
+    animation: moveBg 5s ease infinite;
+    background-size: 200% 200%;
+    background: var(--bg-animated-4s);
+}
+.bg-animated-ssr {
+    animation: moveBg 5s ease infinite;
+    background-size: 200% 200%;
+    background: var(--bg-animated-5s);
+}
+@keyframes moveBg {
+    0%  { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
