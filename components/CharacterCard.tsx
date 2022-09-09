@@ -84,7 +84,7 @@ const CharacterCard = () => {
 
     <>
     {/* Search bar */}
-    <div className='px-2 my-4 max-w-[396px] mx-auto text-slate-200 serif-pro font-light'>
+    <div className='px-2 mb-4 max-w-[396px] mx-auto text-slate-200 serif-pro font-light pt-[60px]'>
         <div className='flex '>
             <div className='w-14 h-10 group bg-[#394562] hover:bg-[#4F6089] flex justify-center items-center text-slate-300
             hover:text-orange-500 transition-all'
@@ -116,7 +116,7 @@ const CharacterCard = () => {
                 >
                     <div className='relative h-8 w-8 mx-auto'>
                         <Image
-                            src={`/assets/elements-icons/${item.id}.png`}
+                            src={item.url}
                             layout='fill'
                             objectFit='cover'
                             className={'transition-all ease-in-out group-hover:grayscale-0 ' + (item.active ? '' : 'grayscale')}
@@ -129,12 +129,12 @@ const CharacterCard = () => {
     </div>
     
     {/* Cards grid */}
-    <div className='grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] justify-items-center gap-y-4'>
-    
-    { filter.map( character => {
-
+    <div className='grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] justify-items-center gap-y-20 py-10'>
+    {
+    filter.map( character => {
         return <Link href={`/characters/${character.id}`} key={character.id} >
-            <a className='relative flex w-full h-96 justify-center items-center transition-all '>
+            <a className={`relative flex w-fit h-fit justify-center items-center transition-all `
+            + (character.status === 'pending' && 'grayscale-[.7] pointer-events-none')}>
                 <div className='flex justify-center items-center transition-all hover:scale-[1.02]'>
                     {/* Blured bg */}
                     <div className={`absolute w-[240px] h-[322px] rounded animate-bg animate-moving-bg bg-blur `
@@ -142,16 +142,16 @@ const CharacterCard = () => {
                     </div>
 
                     {/* Card outline */}
-                    <div className={`absolute w-[240px] h-[322px] rounded animate-bg animate-moving-bg `
+                    <div className={`absolute w-[242px] h-[324px] rounded-md animate-bg animate-moving-bg `
                     + (character.rarity === '4-stars' ? 'border-4s' : 'border-5s') }>
                     </div>
 
                     {/* Card */}
-                    <div className={`flex bg-white rounded w-[238px] h-[320px] overflow-hidden hover:cursor-pointer `
-                    + (character.rarity === '4-stars' ? '' : '') }>
+                    <div className={`flex bg-white rounded w-[238px] h-[320px] overflow-hidden `
+                    + (character.status === 'complete' && 'hover:cursor-pointer') }>
                         <div className={`relative w-32 bg-4stars z-10 animate-bg animate-moving-bg ` + (character.rarity === '4-stars' ? 'bg-animated-4s' : 'bg-animated-5s')}>
                             <Image
-                                src={`/assets/characters/${character.id}-sm.png`}
+                                src={character.characterImage}
                                 layout="fill"
                                 objectFit='cover'
                             />
@@ -159,7 +159,7 @@ const CharacterCard = () => {
                             
                             <div className='absolute w-10 h-10 bg-black/50 rounded-full top-0 bottom-0 left-0 right-0'>
                                 <Image
-                                    src={`/assets/elements/${character.element}.png`}
+                                    src={character.elementUrl}
                                     layout="fill"
                                     objectFit='cover'
                                     className='scale-[.85]'
@@ -168,7 +168,7 @@ const CharacterCard = () => {
 
                             <div className='absolute w-full h-6 bg-black/50 bottom-0'>
                                 <Image
-                                    src={(character.rarity === '4-stars') ? '/assets/Icon_4_Stars.webp' : '/assets/Icon_5_Stars.webp'}
+                                    src={character.rarityUrl}
                                     layout="fill"
                                     objectFit='contain'
                                     className=''

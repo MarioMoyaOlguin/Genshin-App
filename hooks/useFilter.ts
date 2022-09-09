@@ -3,12 +3,13 @@ import characters from "../data/characters";
 
 export const getCharactersByStuff = (searchText:string = '') => {
 
-    // Check if search text is not empty
-    if(searchText.length === 0) { return characters }
+
+    // Check if search text is empty
+    if(searchText.length === 0) { return { baseArr: characters, searchBoxValue: '' } }
 
     //Checks for blank spaces
     const blanks = searchText.replaceAll(/[\s-_/]/g, '');
-    if(blanks.length === 0) { return characters }
+    if(blanks.length === 0) { return { baseArr: characters, searchBoxValue: '' } }
 
     //isolate character rarity text
     const stars = searchText.toLowerCase().replaceAll(/[\s-_/]/g, ' ')

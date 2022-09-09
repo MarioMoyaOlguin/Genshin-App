@@ -45,12 +45,15 @@
         background: var(--bg-animate-5s);
     }
     .bg-blur {
-        filter: blur(8px);
+        filter: blur(12px);
     }
     .bg-outline-b {
         background: linear-gradient(to top, #eb7134 0px, #eb7134 4px, rgba(255, 255, 255, 0.1) 4px, rgba(255, 255, 255, 0.1) 100%);
     }
     .animate-bg {
         background-size: 200% auto;
+    }
+    .label {
+        @apply bg-orange-400/50 h-fit leading-5 px-1 rounded backdrop-blur-[1px];
     }
 }
