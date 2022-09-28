@@ -23,7 +23,7 @@ const Home = () => {
     <ElementsGrid />
     
     {/* Cards grid */}
-    <motion.div layout className='grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] justify-items-center gap-y-20 py-10'>
+    <motion.div layout className='grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] justify-items-center gap-y-20 pt-10 pb-96'>
         <AnimatePresence>
             {
             charactersArr.map( character => {
