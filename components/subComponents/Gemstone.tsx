@@ -13,7 +13,7 @@ const Gemstone = ( {sliver, fragment, chunk, gem}:GemData ) => {
 
   return (
 
-    <div className='flex flex-col w-fit p-2 text-xl serif-pro bg-orange-50 rounded'>
+    <div className='flex flex-col w-fit p-2 text-xl serif-pro bg-gray-100 rounded'>
         <div className='flex justify-center items-center'>
             <img src={sliver} alt='sliver' className='h-8 object-contain' />
             <span className='ml-2 label'>x1</span>

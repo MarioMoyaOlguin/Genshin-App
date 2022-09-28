@@ -56,4 +56,9 @@
     .label {
         @apply bg-orange-400/50 h-fit leading-5 px-1 rounded backdrop-blur-[1px];
     }
+    .nav-inactive {
+    }
+    .nav-active {
+        transform: scale(1.1);
+    }
 }

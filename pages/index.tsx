@@ -2,13 +2,12 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import Navbar from '../components/Navbar'
-import ElementsFilter from '../components/ElementsFilter'
-import CharacterCard from '../components/CharacterCard'
+import Home from '../components/Home'
 
 
-const Home: NextPage = () => {
+const App: NextPage = () => {
 
-
+  
 
   return (
 
@@ -21,7 +20,7 @@ const Home: NextPage = () => {
       <main className="">
         <Navbar />
 
-        <CharacterCard />
+        <Home />
         
       </main>
 
@@ -32,4 +31,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default App

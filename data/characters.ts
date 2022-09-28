@@ -35,10 +35,47 @@ export interface Chars {
     talentMatUnique:string;
 }
 
-interface vision {
+export interface vision {
     id:string;
     active:boolean;
     url:string
+}
+
+export const loader:Chars = {
+    id: 'loaded',
+    characterImage: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    backgroundImage: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    status: 'complete',
+    rarity: '4-stars',
+    rarityUrl: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    element: '',
+    elementUrl: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    weapon: '',
+    region: '',
+    ascensionMat1: '',
+    ascensionMat1Url: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    ascensionMat2: '',
+    ascensionMat2Url: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    ascensionMat3: '',
+    ascensionMat3Url: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    ascensionGem1: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    ascensionGem2: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    ascensionGem3: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    ascensionGem4: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    ascensionMatBoss: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    ascensionMatUnique: '',
+    ascensionMatUniqueUrl: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    ascensionBoss: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    ascensionBossUrl: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    talentBoss: '',
+    talentBossUrl: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    talentBook1: '',
+    talentBook1Url: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    talentBook2: '',
+    talentBook2Url: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    talentBook3: '',
+    talentBook3Url: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO',
+    talentMatUnique: 'https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO'
 }
 
 const characters:Chars[] = [
