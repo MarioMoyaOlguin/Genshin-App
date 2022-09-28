@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import a from 'next/link';
 import React, { useContext } from 'react'
 import { motion, AnimatePresence } from "framer-motion";
 import { GeneralContext } from '../context/appContext';
@@ -7,8 +7,6 @@ import ElementsGrid from './ElementsGrid';
 import SearchBar from './SearchBar';
 import Card from './Card';
 import ItemsSlider from "./Slider";
-import characters from '../data/characters';
-
 
 
 const Home = () => {
@@ -27,16 +25,19 @@ const Home = () => {
         <AnimatePresence>
             {
             charactersArr.map( character => {
-                return <Link href={`/${character.id}`} key={character.id} >
-                    <motion.div
-                        layout
-                        animate={{ opacity: 1 }}
-                        initial={{ opacity: 0 }}
-                        exit={{ opacity: 0 }}
-                    >
-                        <Card character={ character } />
-                    </motion.div>
-                </Link>
+                return (
+                    <a href={`/${character.id}`} key={character.id}
+                    className={'transition-all ' + (character.status === 'complete' ? 'hover:scale-105 ' : '')}>
+                        <motion.div
+                            layout
+                            animate={{ opacity: 1 }}
+                            initial={{ opacity: 0 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            <Card character={ character } />
+                        </motion.div>
+                    </a>
+                )
             })
             }
         </AnimatePresence>

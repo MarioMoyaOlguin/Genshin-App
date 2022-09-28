@@ -53,6 +53,7 @@ const details = () => {
                                     image={data.ascensionBossUrl}
                                     material={data.ascensionMatBoss}
                                     name={data.ascensionBoss}
+                                    quantity='x18'
                                 />
 
                                 

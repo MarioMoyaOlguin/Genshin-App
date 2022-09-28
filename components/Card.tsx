@@ -15,14 +15,16 @@ const Card = ( character:Character) => {
     
     
     <div className={`relative flex w-fit h-fit justify-center items-center transition-all `
-    + (char.status === 'pending' && ' ') }>
+    + (char.status === 'pending' && 'pointer-events-none ') }>
 
-        <div className='flex justify-center items-center transition-all hover:scale-[1.02]'>
+        <div className='flex justify-center items-center transition-all'>
             {/* Blured bg */}
-            <div className={`absolute w-[240px] h-[322px] rounded animate-bg animate-moving-bg bg-blur `
-            + (char.rarity === '4-stars' ? 'border-4s' : 'border-5s') }>
-            </div>
-
+            {
+                (char.status === 'complete') && <div className={`absolute w-[240px] h-[322px] rounded animate-bg animate-moving-bg bg-blur `
+                + (char.rarity === '4-stars' ? 'border-4s' : 'border-5s') }>
+                </div>
+            }
+            
             {/* Card outline */}
             <div className={`absolute w-[242px] h-[324px] rounded-md animate-bg animate-moving-bg `
             + (char.rarity === '4-stars' ? 'border-4s' : 'border-5s') }>
@@ -30,7 +32,7 @@ const Card = ( character:Character) => {
 
             {/* Card */}
             <div className={`flex bg-white rounded w-[238px] h-[320px] overflow-hidden `
-            + (char.status === 'complete' && ' hover:cursor-pointer') }>
+            + (char.status === 'complete' ? ' hover:cursor-pointer' : 'grayscale-[.8]') }>
                 <div className={`relative w-32 bg-4stars z-10 animate-bg animate-moving-bg ` + (char.rarity === '4-stars' ? 'bg-animated-4s' : 'bg-animated-5s')}>
                     <Image
                         src={char.characterImage}

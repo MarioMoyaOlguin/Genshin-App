@@ -94,42 +94,40 @@ const ItemsSlider = (
 
             {/* Scrollable window */}
             <div className={`width height overflow `} ref={cardsContainer}>
-
                 {/* Array container */}
                 <div className={`w-fit height array-container ` + arrayContainer} >
+                  
                   {children}
+
                 </div>
             </div>
         </div>
 
-      {/* Navigation panel */}
-      <div className={(navPanel) ? navPanel : 'navigation-panel '}
-      ref={sliderNavContainer}>
-        {
-          (arrayReady)
-            ? cardsArray.map( item => {
-                return <div onClick={handleSliderNav}
-                  className={` nav ` + (navItemClassName ? navItemClassName : ' nav-items transitions ')} >
-                </div>
-              })
-            : <img src="https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO" alt="loading" 
-                className='w-5 h-5'
-              />
-          
-        }
-    
-          
-      </div>
+        {/* Navigation panel */}
+        <div className={(navPanel) ? navPanel : 'navigation-panel '}
+        ref={sliderNavContainer}>
+          {
+            (arrayReady)
+              ? cardsArray.map( item => {
+                  return <div onClick={handleSliderNav}
+                    className={` nav ` + (navItemClassName ? navItemClassName : ' nav-items transitions ')} >
+                  </div>
+                })
+              : <img src="https://drive.google.com/uc?id=151M6mQO7YUdUmA_zWyYVRBuikXmbZuWO" alt="loading" 
+                  className='w-5 h-5'
+                />
+          }
+        </div>
 
-      <style jsx>{`
-      ${sliderDefaultStyles}
-        .width {
-          width: ${windowWidth};
-        }
-        .height {
-          height: ${windowHeight};
-        }
-      `}</style>
+        <style jsx>{`
+        ${sliderDefaultStyles}
+          .width {
+            width: ${windowWidth};
+          }
+          .height {
+            height: ${windowHeight};
+          }
+        `}</style>
 
     </div>
   )
